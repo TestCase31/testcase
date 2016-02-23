@@ -55,7 +55,7 @@ require_once 'tc_functions.php';
 
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "2201, Ошибка обработки";
+		    $res = "2201, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    die($res);
 		}
 		
@@ -74,7 +74,7 @@ require_once 'tc_functions.php';
 						ORDER BY a.n_prm_type, b.v_prm');
 	$res = mysql_query($query, GetConn());
 	if (!$res) {
-	    $res = "2201, Ошибка обработки";
+	    $res = "2201, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 	    die($res);
 	}
 
@@ -116,7 +116,7 @@ require_once 'tc_functions.php';
 		}
 	}	
 ?>
-<br><br><input type="submit" value="Поиск">
+<br><br><input type="submit" value="РџРѕРёСЃРє">
 </form>
 </td></tr>
 </table>
@@ -148,7 +148,7 @@ require_once 'tc_functions.php';
 
 	$res = mysql_query($query, GetConn());
 	if (!$res) {
-	    $res = "2201, Ошибка обработки";
+	    $res = "2201, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 	    die($res);
 	}
 

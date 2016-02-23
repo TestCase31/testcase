@@ -27,16 +27,16 @@ function deletebyid(catid) {
 </script>
 <table width=50% height=100% border=1 align="center">
 <tr><td height="30">
-<a href="admin.php?act=edit_cat">Записи каталога</a>
+<a href="admin.php?act=edit_cat">Р—Р°РїРёСЃРё РєР°С‚Р°Р»РѕРіР°</a>
 </td>
 <td>
-<a href="admin.php?act=edit_type_cat">Типы каталога</a>
+<a href="admin.php?act=edit_type_cat">РўРёРїС‹ РєР°С‚Р°Р»РѕРіР°</a>
 </td>
 <td>
-<a href="admin.php?act=edit_prm_type">Параметры каталога</a>
+<a href="admin.php?act=edit_prm_type">РџР°СЂР°РјРµС‚СЂС‹ РєР°С‚Р°Р»РѕРіР°</a>
 </td>
 <td>
-<a href="admin.php?act=edit_prm_cat">Значения</a>
+<a href="admin.php?act=edit_prm_cat">Р—РЅР°С‡РµРЅРёСЏ</a>
 </td></tr>
 <tr><td colspan="4" valign="top" height="50">
 <?php
@@ -59,9 +59,9 @@ if($_GET["do"] === "del") {
 <form method="GET" name="edit_form">
 <input type="hidden" name="act" value="<?php echo $_GET["act"];?>" />
 <input type="hidden" name="do" value="add" />
-Название категории:<input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
+РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё:<input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
 <br>
-<input type="submit" value="Добавить"></input>
+<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ"></input>
 </form>
 </td></tr>
 <tr><td colspan="4" valign="top">
@@ -95,10 +95,10 @@ if($_GET["do"] === "del") {
 <form method="GET" name="edit_form">
 <input type="hidden" name="act" value="<?php echo $_GET["act"];?>" />
 <input type="hidden" name="do" value="add" />
-Название параметра: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
-Фильтруется: <input type="checkbox" name="f_prm"></input>
+РќР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
+Р¤РёР»СЊС‚СЂСѓРµС‚СЃСЏ: <input type="checkbox" name="f_prm"></input>
 <br>
-<input type="submit" value="Добавить"></input>
+<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ"></input>
 </form>
 </td></tr>
 <tr><td colspan="4" valign="top">
@@ -106,7 +106,7 @@ if($_GET["do"] === "del") {
 $tc_res = ftc_fetch_prm_type_cat();
 if(!is_string($tc_res)) {
 	while ($row = mysql_fetch_array($tc_res)) {
-	    printf("(%s) %s (<a href=# onclick=\"deletebyid(%s)\">del</a>), [%s];&nbsp;&nbsp;&nbsp;", $row[0], $row[1], $row[0], ($row[2] == "1")?"Ф":"Н/Ф");
+	    printf("(%s) %s (<a href=# onclick=\"deletebyid(%s)\">del</a>), [%s];&nbsp;&nbsp;&nbsp;", $row[0], $row[1], $row[0], ($row[2] == "1")?"Р¤":"Рќ/Р¤");
 	}
 } else {
 	echo "<br>".$tc_res;
@@ -144,9 +144,9 @@ if($res) {
 }
 ?>
 </select>
-Название параметра: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
+РќР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
 <br>
-<input type="submit" value="Добавить"></input>
+<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ"></input>
 </form>
 </td></tr>
 <tr><td colspan="4" valign="top">
@@ -223,9 +223,9 @@ if($res) {
 }
 ?>
 </select>
-Название: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
+РќР°Р·РІР°РЅРёРµ: <input type="text" name="n_type" value="" width="300" maxlength="2000"></input>
 <br>
-<input type="submit" value="Добавить"></input>
+<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ"></input>
 </form>
 </td></tr>
 <tr><td colspan="4" valign="top">
@@ -260,7 +260,7 @@ if(!is_string($tc_res)) {
 ?>
 	<tr><td>
 		<form method="GET" name="add_prm_form">
-		Параметр: 
+		РџР°СЂР°РјРµС‚СЂ: 
 		<select name="prm_type">
 <?php
 $res = mysql_query("SELECT `id_prm_type`, `n_prm_type` FROM `tc_prm_type` WHERE `id_prm_type` not in (select `id_prm_type` from `tc_prm` where `lnk_cat` = ".$row["id_cat"].") ORDER BY `n_prm_type`", GetConn());
@@ -274,7 +274,7 @@ if($res) {
 		<input type="hidden" name="act" value="<?php echo $_GET["act"];?>" />
 		<input type="hidden" name="do" value="add_catprm" />
 		<input type="hidden" name="id_cat" value="<?php echo $row["id_cat"];?>" />
-		<input type="submit" value="Добавить параметр"></input>
+		<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ РїР°СЂР°РјРµС‚СЂ"></input>
 		</form>
 	</td></tr>
 <?php			

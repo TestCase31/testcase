@@ -24,9 +24,9 @@ $wstc_conn = false;
 		$wstc_pass = "superpass";
 		$wstc_conn = mysql_connect('127.0.0.1', $wstc_user, $wstc_pass);
 		if (!$wstc_conn) {
-			die("2001, Ресурс не доступен");
+			die("2001, Р РµСЃСѓСЂСЃ РЅРµ РґРѕСЃС‚СѓРїРµРЅ");
 		}
-		mysql_select_db($wstc_database, $wstc_conn) or die('2002, Ресурс не доступен полностью');
+		mysql_select_db($wstc_database, $wstc_conn) or die('2002, Р РµСЃСѓСЂСЃ РЅРµ РґРѕСЃС‚СѓРїРµРЅ РїРѕР»РЅРѕСЃС‚СЊСЋ');
 		mysql_set_charset('cp1251');
 		return $wstc_conn;
 	}

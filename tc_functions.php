@@ -20,7 +20,7 @@ function ftc_fetch_type_cat()
 		$query = sprintf("SELECT `id_type_cat`, `n_type_cat` FROM `tc_type_catalog` ORDER BY `id_type_cat`");
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3101, Ошибка обработки";
+		    $res = "3101, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		return $res;
@@ -38,7 +38,7 @@ function ftc_add_type_cat($n_type_cat)
 		$query = sprintf("SELECT `tc_getnextseq`() AS `nextseq`");
 		$res = mysql_query($query, GetConn());		
 		if (!$res) {
-			$res = '3201, Ошибка обработки';
+			$res = '3201, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё';
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -50,11 +50,11 @@ function ftc_add_type_cat($n_type_cat)
     		              mysql_real_escape_string($n_type_cat, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "3202, Ошибка обработки";
+			$res = "3202, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3203, Ошибка добавления";
+			$res = "3203, РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ";
 			return $res;
 		}
 		return $res;
@@ -73,11 +73,11 @@ function ftc_del_type_cat($id_type_cat)
 						  mysql_real_escape_string($id_type_cat), GetConn());
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3301, Ошибка обработки";
+		    $res = "3301, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3302, Ошибка удаления";
+			$res = "3302, РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ";
 			return $res;
 		}		
 		return $res;
@@ -95,7 +95,7 @@ function ftc_fetch_prm_type_cat()
 		$query = sprintf("SELECT `id_prm_type`, `n_prm_type`, `f_prm` FROM `tc_prm_type` ORDER BY `id_prm_type`");
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3401, Ошибка обработки";
+		    $res = "3401, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		return $res;
@@ -114,7 +114,7 @@ function ftc_add_prm_type_cat($n_prm_type, $f_prm)
 		$query = sprintf("SELECT `tc_getnextseq`() AS `nextseq`");
 		$res = mysql_query($query, GetConn());		
 		if (!$res) {
-			$res = "3501, Ошибка обработки";
+			$res = "3501, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -127,11 +127,11 @@ function ftc_add_prm_type_cat($n_prm_type, $f_prm)
     		              ($f_prm && strlen($f_prm) > 0)?"1":"0");
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "3502, Ошибка обработки";
+			$res = "3502, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3503, Ошибка добавления ";
+			$res = "3503, РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ ";
 			return $res;
 		}
 		return $res;
@@ -150,11 +150,11 @@ function ftc_del_prm_type_cat($id_prm_type)
 						  mysql_real_escape_string($id_prm_type), GetConn());
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3601, Ошибка обработки";
+		    $res = "3601, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3602, Ошибка удаления";
+			$res = "3602, РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ";
 			return $res;
 		}	
 		return $res;
@@ -183,7 +183,7 @@ function ftc_fetch_prm_cat()
 							ORDER BY n_prm_type, v_prm');
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3701, Ошибка обработки";
+		    $res = "3701, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		return $res;
@@ -202,7 +202,7 @@ function ftc_add_prm_cat($id_prm_type, $v_prm)
 		$query = sprintf("SELECT `tc_getnextseq`() AS `nextseq`");
 		$res = mysql_query($query, GetConn());		
 		if (!$res) {
-			$res = "3801, Ошибка обработки";
+			$res = "3801, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -215,11 +215,11 @@ function ftc_add_prm_cat($id_prm_type, $v_prm)
     		              mysql_real_escape_string($v_prm, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "3802, Ошибка обработки";
+			$res = "3802, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3803, Ошибка добавления ";
+			$res = "3803, РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ ";
 			return $res;
 		}
 		return $res;
@@ -238,11 +238,11 @@ function ftc_del_prm_cat($id_prm)
 						  mysql_real_escape_string($id_prm), GetConn());
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "3901, Ошибка обработки";
+		    $res = "3901, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "3902, Ошибка удаления";
+			$res = "3902, РћС€РёР±РєР° СѓРґР°Р»РµРЅРёСЏ";
 			return $res;
 		}	
 		return $res;
@@ -266,7 +266,7 @@ function ftc_fetch_cat()
 							LEFT JOIN (SELECT a.id_prm, a.v_prm, a.lnk_prm, a.lnk_cat, count(a.id_prm) as dr_cnt FROM tc_prm as a GROUP BY lnk_cat) as ae on ae.lnk_cat = ab.lnk_cat');
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "2101, Ошибка обработки";
+		    $res = "2101, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		return $res;
@@ -290,7 +290,7 @@ function ftc_print_catprm_editor($act, $id_prm, $id_cat, $id_prm_type)
 					mysql_real_escape_string($id_prm_type, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "2200, Ошибка обработки";
+		    $res = "2200, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -310,7 +310,7 @@ function ftc_print_catprm_editor($act, $id_prm, $id_cat, $id_prm_type)
 					($f_prm == 0)?"and a.id_prm = ".mysql_real_escape_string($id_prm, GetConn()):"");
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "2201, Ошибка обработки";
+		    $res = "2201, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$restext = '<form method="GET" id="edit_catprm_form">';
@@ -331,7 +331,7 @@ function ftc_print_catprm_editor($act, $id_prm, $id_cat, $id_prm_type)
 			<input type="hidden" name="act" value="'.$act.'" />
 			<input type="hidden" name="do" value="edit_catprm" />
 			<input type="hidden" name="id_prm" value="'.$id_prm.'" />
-			<input type="submit" value="Изменить" />
+			<input type="submit" value="РР·РјРµРЅРёС‚СЊ" />
 		';
 		$restext = $restext.'</form>';
 		return $restext;
@@ -355,7 +355,7 @@ function ftc_edit_catprm($id_prm, $prm)
 					mysql_real_escape_string($id_prm, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-		    $res = "2200, Ошибка обработки";
+		    $res = "2200, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -374,11 +374,11 @@ function ftc_edit_catprm($id_prm, $prm)
 		}
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "2301, Ошибка обработки";
+			$res = "2301, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "2302, Ошибка изменения".$query;
+			$res = "2302, РћС€РёР±РєР° РёР·РјРµРЅРµРЅРёСЏ".$query;
 			return $res;
 		}
 		return $res;
@@ -397,7 +397,7 @@ function ftc_add_catprm($id_cat, $prm_type)
 		$query = sprintf("SELECT `tc_getnextseq`() AS `nextseq`");
 		$res = mysql_query($query, GetConn());		
 		if (!$res) {
-			$res = "2401, Ошибка обработки";
+			$res = "2401, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -410,11 +410,11 @@ function ftc_add_catprm($id_cat, $prm_type)
     		              mysql_real_escape_string($id_cat, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "2402, Ошибка обработки";
+			$res = "2402, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "2403, Ошибка добавления ";
+			$res = "2403, РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ ";
 			return $res;
 		}
 		return $res;
@@ -433,7 +433,7 @@ function ftc_add_cat($id_type_cat, $n_cat)
 		$query = sprintf("SELECT `tc_getnextseq`() AS `nextseq`");
 		$res = mysql_query($query, GetConn());		
 		if (!$res) {
-			$res = "2501, Ошибка обработки";
+			$res = "2501, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		$row = mysql_fetch_array($res);
@@ -446,11 +446,11 @@ function ftc_add_cat($id_type_cat, $n_cat)
     		              mysql_real_escape_string($n_cat, GetConn()));
 		$res = mysql_query($query, GetConn());
 		if (!$res) {
-			$res = "2502, Ошибка обработки";
+			$res = "2502, РћС€РёР±РєР° РѕР±СЂР°Р±РѕС‚РєРё";
 		    return $res;
 		}
 		if(mysql_affected_rows(GetConn()) != 1) {
-			$res = "2503, Ошибка добавления";
+			$res = "2503, РћС€РёР±РєР° РґРѕР±Р°РІР»РµРЅРёСЏ";
 			return $res;
 		}
 		return $res;
